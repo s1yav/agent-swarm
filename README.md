@@ -12,6 +12,8 @@
 - **Stateful Workflow Pipelines**: Pass and transform state across multi-step agent pipelines with execution logging.
 - **TypeScript Native**: Full type safety for agent inputs, outputs, and orchestration configurations.
 - **Extensible Architecture**: Support for pluggable communication strategies, error handlers, and state management.
+- **Grafana Dashboard Integration**: Experiments on agent swarms and telemetry benchmarks will be displayed on a Grafana dashboard soon.
+
 
 ---
 
