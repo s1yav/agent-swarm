@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# Build & Output
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# Testing & Coverage
+coverage/
+.nyc_output/
+
+# IDE & System
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
