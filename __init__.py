@@ -1,1 +1,1 @@
-from . import agent
+from director import agent
