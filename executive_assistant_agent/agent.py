@@ -1,5 +1,6 @@
 # pyrefly: ignore [missing-import]
-from google.adk.agents.llm_agent import Agent, BuiltInPlanner
+from google.adk.agents.llm_agent import Agent
+from google.adk.planners import BuiltInPlanner
 from google.genai import types
 from pydantic import BaseModel, Field
 from typing import List
@@ -101,6 +102,7 @@ Instead, feel free to ask questions like:
 - "What features does the director agent offer?"
 - "What installation steps are needed to run these projects?"
 """,
+    output_key="response",
     planner=BuiltInPlanner(
         thinking_config=types.ThinkingConfig(
             thinking_budget=1024,
