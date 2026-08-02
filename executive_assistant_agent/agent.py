@@ -100,7 +100,7 @@ Instead, feel free to ask questions like:
     ),
     output_schema=ResponseSchema,
     generate_content_config=types.GenerateContentConfig(
-        temperature=0.5,
+        temperature=0.7,
         safety_settings=[
             types.SafetySetting(
                 category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH,
