@@ -1,7 +1,16 @@
 # pyrefly: ignore [missing-import]
 from google.adk.agents.llm_agent import Agent
 from google.genai import types
-from pydantic import BaseModel. Field
+from pydantic import BaseModel, Field
+from typing import List
+
+
+class ResponseSchema(BaseModel):
+    response: str = Field(..., description="Agent's response to the user's questions")
+    suggested_questions: List[str] = Field(
+        description="Suggested questions that the user can ask about personal coding projects"
+    )
+
 
 root_agent = Agent(
     model="gemini-2.5-flash",
@@ -83,4 +92,5 @@ Instead, feel free to ask questions like:
 - "What features does the director agent offer?"
 - "What installation steps are needed to run these projects?"
 """,
+    output_schema=ResponseSchema,
 )
