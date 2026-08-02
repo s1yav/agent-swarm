@@ -6,7 +6,7 @@ from typing import List
 
 
 class ResponseSchema(BaseModel):
-    response: str = Field(..., description="Agent's response to the user's questions")
+    response: str = Field(description="Agent's response to the user's questions")
     suggested_questions: List[str] = Field(
         description="Suggested questions that the user can ask about personal coding projects"
     )
@@ -99,4 +99,25 @@ Instead, feel free to ask questions like:
         )
     ),
     output_schema=ResponseSchema,
+    generate_content_config=types.GenerateContentConfig(
+        temperature=0.5,
+        safety_settings=[
+            types.SafetySetting(
+                category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+                threshold=types.HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+            ),
+            types.SafetySetting(
+                category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+                threshold=types.HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+            ),
+            types.SafetySetting(
+                category=types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+                threshold=types.HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+            ),
+            types.SafetySetting(
+                category=types.HarmCategory.HARM_CATEGORY_HARASSMENT,
+                threshold=types.HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+            ),
+        ],
+    ),
 )
